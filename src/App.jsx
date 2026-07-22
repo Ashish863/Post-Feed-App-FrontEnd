@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         const checkSession = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/register/me');
+                const response = await axios.get('/register/me');
                 setCurrentUser(response.data.data); 
             } catch (err) {
                 setCurrentUser(null); 
@@ -37,7 +37,7 @@ function App() {
 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:3000/register/logout'); 
+            await axios.post('/register/logout'); 
             setCurrentUser(null);
             setView('login');
         } catch (error) {
