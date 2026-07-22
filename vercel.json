@@ -6,7 +6,7 @@
     },
     {
       "source": "/register/:path*",
-      "destination": "'https://social-app-backend-0r47.onrender.com'"
+      "destination": "https://social-app-backend-0r47.onrender.com"
     }
   ]
 }
