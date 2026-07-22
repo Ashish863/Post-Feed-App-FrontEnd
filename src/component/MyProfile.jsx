@@ -32,7 +32,7 @@ function MyProfile({ currentUser }) {
 
         try {
             // Sends the entire post data object matching your backend controller's req.body destructuring
-            await axios.delete('https://social-app-backend-0r47.onrender.com', { data: postPayload });
+            await axios.delete('/web/deletePost', { data: postPayload });
             
             // Instantly wipe it from the UI state array without making a new fetch request
             setMyPosts(prev => prev.filter(post => post._id !== postPayload._id));
@@ -60,7 +60,7 @@ function MyProfile({ currentUser }) {
             
             {/* User Profile Info Header block */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', paddingBottom: '30px', borderBottom: '1px solid #dbdbdb', marginBottom: '30px' }}>
-                <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#0095f6', color: 'white', display: 'flex', alignItems: 'center', justifyConten: 'center', fontSize: '32px', fontWeight: 'bold' }}>
+                <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#0095f6', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', fontWeight: 'bold' }}>
                     {currentUser?.userName?.charAt(0).toUpperCase()}
                 </div>
                 <div>
