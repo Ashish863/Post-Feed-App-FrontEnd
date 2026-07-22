@@ -16,7 +16,7 @@ function CreatePost({ onPostCreated }) {
         formData.append("image", imageFile); 
 
         try {
-            await axios.post('http://localhost:3000/web/userPost', formData);
+            await axios.post('/web/userPost', formData);
             alert("Post Created Successfully!");
             setCaption("");
             setImageFile(null);

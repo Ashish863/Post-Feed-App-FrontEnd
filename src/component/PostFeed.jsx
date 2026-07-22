@@ -10,7 +10,7 @@ function PostFeed({ refreshTrigger, currentUser }) {
     useEffect(() => {
         const fetchFeed = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/web/feed');
+                const response = await axios.get('/web/feed');
                 setPosts(response.data.data); 
             } catch (err) {
                 console.error("Error fetching feed:", err);
@@ -26,7 +26,7 @@ function PostFeed({ refreshTrigger, currentUser }) {
 
 const handleDeleteComment = async (postId, commentId) => {
     try {
-        const response = await axios.delete(`http://localhost:3000/web/comment/${postId}/${commentId}`);
+        const response = await axios.delete(`/web/comment/${postId}/${commentId}`);
         setActiveMenuId(null); // Close dropdown menu layout
 
         const remainingComments = response.data?.data;
@@ -54,7 +54,7 @@ const handleDeleteComment = async (postId, commentId) => {
     }
 
    try {
-    const response = await axios.post(`http://localhost:3000/web/comment/${postId}`, { text: commentText });
+    const response = await axios.post(`/web/comment/${postId}`, { text: commentText });
     
     setCommentInputs(prev => ({ ...prev, [postId]: "" }));
 
@@ -88,7 +88,7 @@ const handleDeleteComment = async (postId, commentId) => {
 
         try {
             // Hits your dynamic parameter backend endpoint route
-            const response = await axios.post(`http://localhost:3000/web/like/${postId}`);
+            const response = await axios.post(`/web/like/${postId}`);
             const { likesArray } = response.data.data;
 
             // Optimistically update only the matching post card inside local state array

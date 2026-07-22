@@ -30,7 +30,7 @@ function Login({ onLoginSuccess }) {
 
         try {
             
-            const response = await axios.post('http://localhost:3000/register/login', payload);
+            const response = await axios.post('/register/login', payload);
 
             setMessage({ text: response.data.message || "Logged in successfully!", isError: false });
             

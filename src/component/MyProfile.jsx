@@ -13,7 +13,7 @@ function MyProfile({ currentUser }) {
     useEffect(() => {
         const fetchProfilePosts = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/web/getMyPost');
+                const response = await axios.get('/web/getMyPost');
                 setMyPosts(response.data.data);
             } catch (err) {
                 console.error("Profile fetch failed:", err);
@@ -32,7 +32,7 @@ function MyProfile({ currentUser }) {
 
         try {
             // Sends the entire post data object matching your backend controller's req.body destructuring
-            await axios.delete('http://localhost:3000/web/deletePost', { data: postPayload });
+            await axios.delete('https://social-app-backend-0r47.onrender.com', { data: postPayload });
             
             // Instantly wipe it from the UI state array without making a new fetch request
             setMyPosts(prev => prev.filter(post => post._id !== postPayload._id));
