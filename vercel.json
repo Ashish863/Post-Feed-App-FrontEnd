@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/web/:path*",
+      "destination": "https://social-app-backend-0r47.onrender.com"
+    },
+    {
+      "source": "/register/:path*",
+      "destination": "'https://social-app-backend-0r47.onrender.com'"
+    }
+  ]
+}
